@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html  lang="fr">
+	<head>
+		<head>
+			<title>Projet Gestion des étudiants</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<script src="traitements.js"></script>
+
+	</head>
+	<body>
+		<div>
+			<h1> Gestion des étudiants </h1>
+			<div id="zone_etudiant">
+					<h2>Affichage détail des étudiants</h2>
+					<div id="detail_etudiant">
+						<label>ID :</label>
+						<input type="text" id="etu_id" value="" placeholder="ID de l'étudient" required />
+						<label>Nom : </label>
+						<input type="text" id="etu_nom" value="" placeholder="saisir le nom de l'étudiant" required />
+						<label>Prénom : </label>
+						<input type="text" id="etu_prenom" value="" placeholder="saisir le prénom de l'étudiant" required />
+						<hr />
+						<label>Matière : </label>
+						<select id="liste_mat"></select> 
+						<hr />
+						<label>Notes : </label>
+							<div id="liste_notes" style="display:inline-grid"></div> <!-- on rajoute à ce niveau la liste des notes par matière -->
+						<hr />
+						<label>Moyennes : </label>
+						<div id="recap_mat" style="display:inline-grid"></div>
+			
+					</div>
+			</div>
+			<div id="zone_navigation">
+					<h2>navigation étudiant par étudiant</h2>
+					<button onclick="recharge_precedant();"><<</button>
+					<button onclick="recharge_suivant();">>></button>
+			</div>
+		</div>
+		<div id="zone_matiere">
+			<h2>Affichage récapitulatif matière pour la promotion</h2>
+			<button>Calcul des moyennes </button>
+		</div>
+		
+		
+		
+		<script>
+				chargement_select_matieres();
+				chargement_etudiant(Object.keys(liste_etudiants)[0]); // on passe le premier de la liste
+
+		</script>
+	</body>
+</html>
+
